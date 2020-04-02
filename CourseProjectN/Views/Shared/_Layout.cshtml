@@ -1,0 +1,46 @@
+﻿@using CourseProjectN.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CourseProject</title>
+    <link rel="stylesheet" href="~/Content/Index.css">
+</head>
+<body>
+    <div class="row menu" style="background-color:white;z-index:500;">
+        <input class="search" style="margin: 1% 15% 1% 20%" type="search" placeholder="Поиск по сайту" />
+        @if (CurrentUser.Nick == null)
+        {
+            <form style="margin-left:25%;margin-top:1%" method="get" action="~/Users/Login">
+                <input style="margin: 1% 0% 1% 30%" ;height:70%;width:4%;" class="but" type="submit" value="Вход" />
+            </form>
+            <p style="font-family:'Times New Roman';font-size:20px;margin-left:1%;margin-top:1%">/</p>
+            <form style="margin-top:1%" method="get" action="~/Users/Registration">
+                <input style="margin: 1% 0% 1% 2%" ;height:70%;width:4%;" class="but" type="submit" value="Регистрация" />
+            </form>
+        }
+        else
+        {
+            <div class="dropdown" style="margin-left:70%;margin-top:-3%">
+                <a class="btn btn-secondary dropdown-toggle" style="background-color:white;color:black;border-color:#e6e6e6;border-width:2px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @CurrentUser.Nick
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="~/Collections/Collections">Мои коллекции</a>
+                    @if (CurrentUser.Admin)
+                    {
+                        <a class="dropdown-item" href="#">Администрирование</a>
+                    }
+                    <a class="dropdown-item" href="~/Users/Exit">Выйти</a>
+                </div>
+            </div>
+        }
+
+
+    </div>
+    <div class="body-content">
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

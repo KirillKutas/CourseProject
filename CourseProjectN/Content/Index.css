@@ -1,0 +1,48 @@
+﻿
+.menu {
+    position: fixed;
+    border-bottom: 2px solid #e6e6e6;
+    height: 7%;
+    width: 100%;
+    z-index:5000;
+}
+.but {
+    background-color:white;
+    border: 2px solid #e6e6e6;
+    border-radius:5px;
+    font-family:'Times New Roman'
+}
+    .but:hover {
+        border: 2px solid #bdbdbd;
+    }
+input {
+    outline: none;
+}
+.search {
+    background-color: white;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-family:'Times New Roman'
+}
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#drop-area {
+    border: 1px solid #e6e6e6;
+    height:200px;
+}
+    #drop-area.hover {
+        background: #ddd;
+        border-color: #aaa;
+    }
+
+    #drop-area.error {
+        background: #faa;
+        border-color: #f00;
+    }
+
+    #drop-area.drop {
+        background: #afa;
+        border-color: #0f0;
+    }

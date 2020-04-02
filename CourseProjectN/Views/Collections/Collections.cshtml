@@ -1,0 +1,93 @@
+﻿@using CourseProjectN.Models
+@{
+    ViewBag.Title = "Collections";
+    CollectionContext context = new CollectionContext();
+    int count = 0;
+}
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        function PressLike(but) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Collections/Like')
+            let formdata = new FormData();
+            var str = but.src.split('/');
+            if (str[4] == 'DisableLike.png') {
+                but.src = '/Images/EnableLike.png'
+                formdata.append('flag', 'true')
+                xhr.send(formdata)
+            }
+            else {
+                but.src = '/Images/DisableLike.png';
+                formdata.append('flag', 'false')
+                xhr.send(formdata)
+            }
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById("countLikes").innerHTML = xhr.responseText;
+            }
+            else if (xhr.readyState == 4 && xhr.status != 200) {
+                alert('error')
+            }
+        }
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/Index.css">
+</head>
+<body style="background-color:#fff7fc">
+    <div class="row justify-content-center">
+        <div class="col-md-2">
+            @using (Html.BeginForm("Create", "Collections", FormMethod.Get))
+            {
+                <input class="but" style="margin-top:25%;z-index:600000;" type="submit" value="Создать новую коллекцию" />
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col-md-12" style="margin-left:27%;margin-top:2%">
+                <form style="border:1px solid #e6e6e6;background-color:white;padding:4px">
+                    <fieldset>
+                        <legend>Мои коллекции:</legend>
+                        @foreach (var item in context.Collections)
+                        {
+
+                            if (item.UserId == CurrentUser.Id)
+                            {
+                                if (count == 4)
+                                {
+                                    <br /> 
+                                    <br />
+                                    count = 0;
+                                }
+                                <div style="border:1px solid #e6e6e6;display:inline-block;">
+                                    <figure style=" padding: 7px;font-family:'Times New Roman'">
+                                        <p><img src="@item.ImgUrl" style="height:200px;width:225px" /></p>
+                                        <figcaption style="margin: 0 auto 5px;text-align:center" ;>@item.Name</figcaption>
+                                        <img id="@item.Id" onclick="PressLike(this)" src="~/Images/DisableLike.png" style="width:25px;height:20px;" />
+                                        <p id="countLikes" style="display:inline-block;margin-bottom:1%">1</p>
+                                        <img id="@item.Id" src="~/Images/Comment.png" style="width:25px;height:20px;" />
+                                        <p id="countComments" style="display:inline-block;margin-bottom:1%">1</p>
+                                    </figure>
+                                </div>
+                                count++;
+                            }
+                        }
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

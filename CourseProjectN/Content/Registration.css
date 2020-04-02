@@ -1,0 +1,14 @@
+﻿.MainDiv {
+    margin-top: 10%;
+    border: 1px solid #ebebeb;
+}
+.but {
+    background-color: #fff7fc;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    font-family: 'Times New Roman'
+}
+
+    .but:hover {
+        border: 2px solid #bdbdbd;
+    }
