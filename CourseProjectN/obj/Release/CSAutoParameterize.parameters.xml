@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DBConnection-Web.config Connection String" description="DBConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="data source=(localdb)\MSSQLLocalDB;Initial Catalog=userstore;Integrated Security=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Kirill\\Study\\all\ projects\\itransition\\CourseProjectN\\CourseProjectN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBConnection']/@connectionString" />
+  </parameter>
+  <parameter name="IdentityDb-Web.config Connection String" description="IdentityDb Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\IdentityDb.mdf;Integrated Security=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Kirill\\Study\\all\ projects\\itransition\\CourseProjectN\\CourseProjectN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDb']/@connectionString" />
+  </parameter>
+</parameters>

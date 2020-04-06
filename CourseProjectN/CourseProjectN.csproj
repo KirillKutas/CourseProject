@@ -226,6 +226,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\CollectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -238,6 +239,7 @@
     <Compile Include="Models\Collections.cs" />
     <Compile Include="Models\CreateCollectionModel.cs" />
     <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\Like.cs" />
     <Compile Include="Models\Likes.cs" />
     <Compile Include="Models\LikesContext.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -260,6 +262,7 @@
     <Content Include="Images\EnableLike.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CourseProjectN - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -288,6 +291,7 @@
     <Content Include="Views\Users\Registration.cshtml" />
     <Content Include="Views\Collections\Collections.cshtml" />
     <Content Include="Views\Collections\Create.cshtml" />
+    <Content Include="Views\Items\Items.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

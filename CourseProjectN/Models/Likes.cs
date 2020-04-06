@@ -10,6 +10,5 @@ namespace CourseProjectN.Models
         public int Id { get; set; }
         public int Collection { get; set; }
         public string UserId { get; set; }
-        public int CountOfLikes { get; set; }
     }
 }

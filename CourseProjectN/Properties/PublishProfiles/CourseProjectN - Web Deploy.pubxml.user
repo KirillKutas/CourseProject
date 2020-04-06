@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2LHBRfJLhE+mRGlDPFUuRwAAAAACAAAAAAAQZgAAAAEAACAAAAAyKIDtAlPXNeNq2Z3/jiAGzd8uKCiK5gEr2R6ktf5hpAAAAAAOgAAAAAIAACAAAACJTSL9QEYrThZ0r25YtJ+w6/lMVmQ5boxkT/+425G7L4AAAAA3tNAAQFV9V7YbgplI6Jai7um6egAIswcrOZ60qhEDo0UhZLrnRg/+xeGd9GLsHBWmq2/k+0x9wkDbaauZD0zoDVKfgVj0tu9ZIKHDnQmQTItLd1iFbUucWHjeGxYp3ADC2Jv2RSgUSYf3ZC9BeMBkIpP3SgL3Re4baFftJjHPI0AAAADFGAxWAnOnn47e8Nmz3+nzbKC8EbgPzkb1lCgs9/h/Ng89+1kl/5loVi0i/kbsGBLQ38x2O6BewFR/MAbbg0XO</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:ide.database.windows.net,1433;Initial Catalog=CourseProjectN_db1;User Id=kirill@ide;Password=kk01112000KK19319485564" />
+    <AzureDBConnectionStrings Include="Data Source=tcp:itransitiontask02dbserver.database.windows.net,1433;Initial Catalog=CourseProjectN_db;User Id=kirill@itransitiontask02dbserver;Password=kk01112000KK19319485564" />
+  </ItemGroup>
+</Project>

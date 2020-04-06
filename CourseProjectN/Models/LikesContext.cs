@@ -14,5 +14,6 @@ namespace CourseProjectN.Models
         }
 
         public DbSet<Likes> Likes { get; set; }
+        public DbSet<Like> Like { get; set; }
     }
 }
